@@ -11,6 +11,10 @@
 |
 */
 
+use Illuminate\Routing\Route as RoutingRoute;
+use Illuminate\Support\Facades\Route;
+use Symfony\Component\Routing\Annotation\Route as AnnotationRoute;
+
 Route::get('/', function () {
     return view('welcome');
 });
