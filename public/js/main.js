@@ -23,6 +23,7 @@
     /* testimonials Slider Active
     =============================*/
     $('.testimonials').owlCarousel({
+        rtl: true,
         loop: true,
         margin: 0,
         responsiveClass: true,
@@ -30,12 +31,13 @@
         autoplay: true,
         autoplayTimeout: 4000,
         smartSpeed: 1000,
-        navText: ['<i class="ti-arrow-left"></i>', '<i class="ti-arrow-right" ></i>'],
+        navText: ['<i class="ti-arrow-right"></i>', '<i class="ti-arrow-left" ></i>'],
         items: 1
     });
     /* testimonials Slider Active
     =============================*/
     $('.screen-slider').owlCarousel({
+        rtl: true,
         loop: true,
         margin: 0,
         responsiveClass: true,
@@ -43,7 +45,7 @@
         autoplay: true,
         autoplayTimeout: 4000,
         smartSpeed: 1000,
-        navText: ['<i class="ti-arrow-left"></i>', '<i class="ti-arrow-right" ></i>'],
+        navText: ['<i class="ti-arrow-right"></i>', '<i class="ti-arrow-left" ></i>'],
         items: 1,
         animateIn: 'fadeIn',
         animateOut: 'fadeOut',
@@ -52,6 +54,7 @@
     /* testimonials Slider Active
     =============================*/
     $('.clients').owlCarousel({
+        rtl: true,
         loop: true,
         margin: 30,
         responsiveClass: true,
@@ -59,7 +62,7 @@
         autoplay: true,
         autoplayTimeout: 4000,
         smartSpeed: 1000,
-        navText: ['<i class="ti-arrow-left"></i>', '<i class="ti-arrow-right" ></i>'],
+        navText: ['<i class="ti-arrow-right"></i>', '<i class="ti-arrow-left" ></i>'],
         responsive: {
             0: {
                 items: 3,
