@@ -12,9 +12,12 @@
 */
 
 use Illuminate\Routing\Route as RoutingRoute;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use Symfony\Component\Routing\Annotation\Route as AnnotationRoute;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::view('/', 'index');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
