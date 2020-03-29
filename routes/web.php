@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use Symfony\Component\Routing\Annotation\Route as AnnotationRoute;
 
-Route::view('/', 'index');
+Route::get('/', 'IndexController@main');
 
 Auth::routes();
 
