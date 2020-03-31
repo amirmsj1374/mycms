@@ -23,9 +23,15 @@
                         </a>
 
                         <div class="dropdown-menu dropdown-menu-right text-right" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="{{ url('home') }}">
+                                <i class="ti-dashboard ml-1"></i>
+                                داشبورد
+                            </a>
+
                             <a class="dropdown-item" href="{{ route('logout') }}"
                                onclick="event.preventDefault();
                                              document.getElementById('logout-form').submit();">
+                                <i class="ti-lock ml-1"></i>
                                 خروج
                             </a>
 

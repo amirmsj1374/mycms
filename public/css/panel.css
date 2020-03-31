@@ -12,3 +12,16 @@ body {
 .text-decoration-none:hover {
     text-decoration: none;
 }
+
+
+/* modify default bootstrap */
+
+.nav-link .caret {
+    margin-right: 5px;
+}
+.custom-checkbox label {
+    margin-right: 25px;
+}
+.custom-checkbox label:before , .custom-checkbox label:after {
+    right: 0;
+}
