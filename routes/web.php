@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Route;
 use Symfony\Component\Routing\Annotation\Route as AnnotationRoute;
 
 // resources routes
-Route::resource('header', 'HeaderController')->only(['edit', 'update']);
+Route::resource('headers', 'HeaderController')->only(['edit', 'update']);
 
 // laravel auth routes
 Route::get('/', 'IndexController@main');

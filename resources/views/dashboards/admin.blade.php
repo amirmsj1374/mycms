@@ -11,7 +11,7 @@
                 <span class="lead"> مدیریت منو </span>
             </div>
             <div class="card-footer text-left">
-                <a href="" class="text-decoration-none"> <i class="ti-pencil s-1-5x mx-1 text-success" title="ویرایش"></i> </a>
+            <a href="" class="text-decoration-none"> <i class="ti-pencil s-1-5x mx-1 text-success" title="ویرایش"></i> </a>
                 @if ( true )
                     <a href="" class="text-decoration-none"> <i class="ti-na s-1-5x mx-1 text-warning" title="عدم نمایش"></i> </a>         
                 @else
@@ -26,7 +26,7 @@
                 <span class="lead"> مدیریت هدر </span>
             </div>
             <div class="card-footer text-left">
-                <a href="" class="text-decoration-none"> <i class="ti-pencil s-1-5x mx-1 text-success" title="ویرایش"></i> </a>
+                    <a href="{{url('headers/1/edit')}}" class="text-decoration-none"> <i class="ti-pencil s-1-5x mx-1 text-success" title="ویرایش"></i> </a>
                 @if ( true )
                     <a href="" class="text-decoration-none"> <i class="ti-na s-1-5x mx-1 text-warning" title="عدم نمایش"></i> </a>         
                 @else
