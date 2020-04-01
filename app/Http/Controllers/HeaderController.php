@@ -20,7 +20,18 @@ class HeaderController extends Controller
 
     public function update(Request $request, Header $header)
     {
-        dd("salam");
+        $data = $request->validate([
+            "title" => "nullable",
+            "btn-name" => "nullable",
+            "btn-link" => "nullable",
+            "description" => "nullable|string|max:1000",
+            "mobile_visible" => "nullable|boolean",
+            "preloader" => "nullable|boolean",
+        ]);
+        
+        $header->update($data);
+
+        return back();
     }
 
 }

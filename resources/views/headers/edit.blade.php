@@ -16,12 +16,12 @@
             
             <div class="col-md-4 my-2">
                 <label for="btn-name"> نام دکمه </label>
-                <input type="text" class="btn-name form-control" name="btn-name" id="btn-name" value="{{$header->btn_name}}">
+                <input type="text" class="btn-name form-control" name="btn_name" id="btn-name" value="{{$header->btn_name}}">
             </div>
             
             <div class="col-md-4 my-2">
                 <label for="btn-link"> لینک دکمه </label>
-                <input type="text" class="btn-link form-control" name="btn-link" id="btn-link" value="{{$header->btn_link}}">
+                <input type="text" class="btn-link form-control" name="btn_link" id="btn-link" value="{{$header->btn_link}}">
             </div>
 
             
@@ -32,14 +32,16 @@
 
             <div class="col-md-6 my-3">
                 <div class="custom-control custom-checkbox">
-                    <input type="checkbox" class="custom-control-input" id="mobile">
+                    <input type="hidden" name="mobile_visible" value="0">
+                    <input type="checkbox" class="custom-control-input" name="mobile_visible" id="mobile" value="1" @if ($header->mobile_visible) checked @endif>
                     <label class="custom-control-label" for="mobile"> اسلایدر موبایل را نمایش بده </label>
                 </div>
             </div>
 
             <div class="col-md-6 my-3">
                 <div class="custom-control custom-checkbox">
-                    <input type="checkbox" class="custom-control-input" id="preloader">
+                    <input type="hidden" name="preloader" value="0">
+                    <input type="checkbox" class="custom-control-input" name="preloader" id="preloader" value="1" @if ($header->preloader) checked @endif>
                     <label class="custom-control-label" for="preloader"> لودینگ رو نمایش بده </label>
                 </div>
             </div>
