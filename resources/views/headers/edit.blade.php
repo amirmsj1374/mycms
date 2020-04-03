@@ -9,6 +9,8 @@
 
         <div class="row">
 
+            <h3 class="col-12 dinar text-info mb-4"> ویرایش هدر </h3>
+
             <div class="col-md-3 my-2">
                 <label for="title"> عنوان هدر </label>
                 <input type="text" class="title form-control" name="title" id="title" value="{{$header->title}}">
@@ -52,15 +54,48 @@
             </div>
 
             <hr class="col-12">
+
+            <h3 class="col-12 dinar text-info mb-4"> عکس های اسلایدر  </h3>
+
+            @foreach ($header->photos as $photo)
+                
+                <div class="col-md-3 my-2">
+                    <div class="card">
+                        <div class="card-body">
+                            <img src="{{asset($photo->path)}}" class="img-fluid">
+                        </div>
+                        <div class="card-footer text-center">
+                            <a href="javascript:void" class="text-decoration-none delete-photo" data-photo-id="{{$photo->id}}"> 
+                                <i class="ti-trash text-danger s-2x"></i> 
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            @endforeach
+
+            <hr class="col-12">
+
+            <div class="col-md-3 my-2 ml-auto mr-auto">
+                <label for="slider"> آپلود عکس جدید برای اسلایدر </label>
+                <input type="file" class="slider form-control" name="slider[]" id="slider" multiple>
+            </div>
             
-            <div class="col-md-5"></div>
-            <div class="col-md-2">
+        </div>
+
+        <hr class="col-12">
+
+        <div id="photos-to-be-deleted">
+            {{-- this div will be filled via jQuery --}}
+        </div>
+
+        <div class="row">
+            <div class="col-md-2 ml-auto mr-auto">
                 <button type="submit" class="btn btn-primary btn-block">
                     <i class="ti-check ml-1"></i> 
                     تایید 
                 </button>
             </div>
-
         </div>
 
     </form>

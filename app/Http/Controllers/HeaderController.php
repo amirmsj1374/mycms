@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Header;
+use App\HeaderMobilePhoto;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
+use Symfony\Component\Console\Helper\Helper;
 
 class HeaderController extends Controller
 {
@@ -21,6 +23,7 @@ class HeaderController extends Controller
 
     public function update(Request $request, Header $header)
     {
+
         $data = $request->validate([
             "title" => "nullable",
             "btn-name" => "nullable",
@@ -33,15 +36,28 @@ class HeaderController extends Controller
 
         if ($photo = $request->bg_path) {
 
-            if (file_exists($header->bg_path)) {
-                File::delete($header->bg_path);
+            $data['bg_path'] = HelperController::upload($photo, $header->bg_path);
+
+        }
+
+        if ($sliders = $request->slider) {
+            
+            foreach ($sliders as $slider) {
+               $path = HelperController::upload($slider);
+               HeaderMobilePhoto::make($path);
             }
 
-            $file_name = HelperController::rs() . '.' . $photo->getClientOriginalExtension();
-            $relative_path = "storage\app\public" ;
-            $result = $photo->move(base_path($relative_path), $file_name);
-            $data['bg_path'] = "storage/" . $file_name;
+        }
 
+        if ($photo_ids = $request->photo_ids) {
+            foreach ($photo_ids as $id) {
+                $photo_to_be_deleted = HeaderMobilePhoto::find($id);
+                if (file_exists($photo_to_be_deleted->path)) {
+                    File::delete($photo_to_be_deleted->path);
+                }
+                
+                $photo_to_be_deleted->delete();
+            }
         }
         
         $header->update($data);

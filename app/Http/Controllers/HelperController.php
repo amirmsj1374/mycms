@@ -2,11 +2,29 @@
 
 namespace App\Http\Controllers;
 
+use App\Header;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\File;
+use phpDocumentor\Reflection\Types\This;
 
 class HelperController extends Controller
 {
-    static function rs($length = 10) {
+
+    public static function upload($new_file, $prev_file=null) {
+
+        if ( $prev_file && file_exists($prev_file)) {
+            File::delete($prev_file);
+        }
+        
+        $file_name = HelperController::rs() . '.' . $new_file->getClientOriginalExtension();
+        $relative_path = "storage\app\public" ;
+        $result = $new_file->move(base_path($relative_path), $file_name);
+        return "storage/" . $file_name;
+
+    }
+
+    public static function rs($length = 10) {
         $characters = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ';
         $charactersLength = strlen($characters);
         $randomString = '';
