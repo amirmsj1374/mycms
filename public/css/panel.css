@@ -6,6 +6,10 @@ body {
 .s-2x {
     font-size: 2em;
 }
+.bg-wite {
+    background-color: #fff;
+}
+
 .s-1-5x {
     font-size: 1.5em;
 }

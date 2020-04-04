@@ -40,7 +40,7 @@
                 <span class="lead"> مدیریت فوتر</span>
             </div>
             <div class="card-footer text-left">
-                <a href="" class="text-decoration-none"> <i class="ti-pencil s-1-5x mx-1 text-success" title="ویرایش"></i> </a>
+            <a href="{{url('footers/1/edit')}}" class="text-decoration-none"> <i class="ti-pencil s-1-5x mx-1 text-success" title="ویرایش"></i> </a>
                 @if ( true )
                     <a href="" class="text-decoration-none"> <i class="ti-na s-1-5x mx-1 text-warning" title="عدم نمایش"></i> </a>         
                 @else

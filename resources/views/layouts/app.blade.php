@@ -29,7 +29,9 @@
                 @include('fragments.message')
                 @include('fragments.errors')
             </div>
-            @yield('content')
+            <div class="bg-white py-4 container">
+                @yield('content')
+            </div>
         </main>
     </div>
 
