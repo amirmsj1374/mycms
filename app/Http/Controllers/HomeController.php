@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Message;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -14,6 +15,7 @@ class HomeController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
+        $this->middleware('admin')->only(["show_messages"]);
     }
 
     /**
@@ -30,5 +32,11 @@ class HomeController extends Controller
             return view('dashboards.user');
         }
         
+    }
+
+    public function show_messages()
+    {
+        $messages = Message::paginate(8);
+        return view("messages.index", compact("messages"));
     }
 }
