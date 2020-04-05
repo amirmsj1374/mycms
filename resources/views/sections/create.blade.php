@@ -12,9 +12,9 @@
           <label for="type"> نوع بخش </label>
 
                 <select class="form-control" name="type" id="type" required>
-                    <option> -- انتخاب کنید -- </option>
+                    <option value=""> -- انتخاب کنید -- </option>
                   @foreach ($section_types as $section_type)
-                      <option value="{{$section_type}}"> {{$section_type}} </option>
+                      <option value="{{$section_type}}"> {{ translate_section_types($section_type) }} </option>
                   @endforeach
                 </select>
           
@@ -22,7 +22,7 @@
 
         <div class="form-group col-md-3 my-2 ml-auto">
           <label for="position"> ترتیب </label>
-          <input type="number" class="position form-control" name="position" id="position" required>
+          <input type="number" class="position form-control" name="position" id="position" value="{{$count+1}}" required>
         </div>
 
     </div>

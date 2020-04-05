@@ -33,4 +33,5 @@ class HelperController extends Controller
         }
         return $randomString;
     }
+
 }
