@@ -9,7 +9,8 @@ use Symfony\Component\Routing\Annotation\Route as AnnotationRoute;
 Route::resource('headers', 'HeaderController')->only(['edit', 'update']);
 Route::resource('footers', 'FooterController')->only(['edit', 'update']);
 
-// laravel auth routes
 Route::get('/', 'IndexController@main');
+Route::post('message', 'IndexController@store_message');
+
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');

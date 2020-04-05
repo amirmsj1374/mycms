@@ -46,13 +46,16 @@
                     </address>
                 </div>
                 <div class="col-xs-12 col-md-8">
-                    <form action="process.php" id="contact-form" method="post" class="contact-form">
+                    <form action="{{url('message')}}" id="contact-form" method="post" class="contact-form">
+                        
+                        @csrf
+
                         <div class="form-double">
-                            <input type="text" id="form-name" name="form-name" placeholder=" نام شما " class="form-control" required="required">
-                            <input type="email" id="form-email" name="form-email" class="form-control" placeholder=" آدرس ایمیل" required="required">
+                            <input type="text" id="form-name" name="name" placeholder=" نام شما " class="form-control" required="required">
+                            <input type="email" id="form-email" name="email" class="form-control" placeholder=" آدرس ایمیل" required="required">
                         </div>
-                        <input type="text" id="form-subject" name="form-subject" class="form-control" placeholder=" موضوع پیام ">
-                        <textarea name="message" id="form-message" name="form-message" rows="5" class="form-control" placeholder="متن پیام شما" required="required"></textarea>
+                        <input type="text" id="form-subject" name="subject" class="form-control" placeholder=" موضوع پیام ">
+                        <textarea id="form-message" name="message" rows="5" class="form-control" placeholder="متن پیام شما" required="required"></textarea>
                         <button type="submit" class="button">ارسال</button>
                     </form>
                 </div>
