@@ -16,12 +16,9 @@
                 <span class="lead"> مدیریت منو </span>
             </div>
             <div class="card-footer text-left">
-            <a href="" class="text-decoration-none"> <i class="ti-pencil s-1-5x mx-1 text-success" title="ویرایش"></i> </a>
-                @if ( true )
-                    <a href="" class="text-decoration-none"> <i class="ti-na s-1-5x mx-1 text-warning" title="عدم نمایش"></i> </a>         
-                @else
-                    <a href="" class="text-decoration-none"> <i class="ti-eye s-1-5x mx-1 text-warning" title="نمایش"></i> </a>    
-                @endif
+            <a href="" class="text-decoration-none"> 
+                <i class="ti-pencil s-1-5x mx-1 text-success" title=" ویرایش محتویات "></i> 
+            </a>
             </div>
         </div>
         
@@ -31,27 +28,32 @@
                 <span class="lead"> مدیریت هدر </span>
             </div>
             <div class="card-footer text-left">
-                    <a href="{{url('headers/1/edit')}}" class="text-decoration-none"> <i class="ti-pencil s-1-5x mx-1 text-success" title="ویرایش"></i> </a>
-                @if ( true )
-                    <a href="" class="text-decoration-none"> <i class="ti-na s-1-5x mx-1 text-warning" title="عدم نمایش"></i> </a>         
-                @else
-                    <a href="" class="text-decoration-none"> <i class="ti-eye s-1-5x mx-1 text-warning" title="نمایش"></i> </a>    
-                @endif
+                    <a href="{{url('headers/1/edit')}}" class="text-decoration-none"> 
+                        <i class="ti-pencil s-1-5x mx-1 text-success" title=" ویرایش محتویات "></i> 
+                    </a>
             </div>
         </div>
 
         @foreach ($sections as $section)
 
             <div class="card my-2">
-                <div class="card-body bg-warning">
+                <div class="card-body bg-info text-light">
                     <span class="lead"> {{ translate_section_types($section->type) }} </span>
                 </div>
                 <div class="card-footer text-left">
-                        <a href="{{url("sections/$section->id/edit")}}" class="text-decoration-none"> <i class="ti-pencil s-1-5x mx-1 text-success" title="ویرایش"></i> </a>
-                    @if ( true )
-                        <a href="" class="text-decoration-none"> <i class="ti-na s-1-5x mx-1 text-warning" title="عدم نمایش"></i> </a>         
+                        <a href="{{url("sections/$section->id/edit")}}" class="text-decoration-none"> 
+                            <i class="ti-pencil s-1-5x mx-2 text-success" title=" ویرایش محتویات "></i> 
+                        </a>
+                        <a href="{{url("sections/$section->id/edit")}}" class="text-decoration-none"> 
+                            <i class="fa fa-edit s-1-5x mx-2 text-primary" title="ویرایش"></i> 
+                        </a>
+                        <a href="#" class="text-decoration-none">
+                            <i class="fa fa-trash s-1-5x mx-2 text-danger" title=" پاک کردن "></i> 
+                        </a>
+                    @if ( $section->visible )
+                        <a href="" class="text-decoration-none"> <i class="fa fa-eye-slash s-1-5x mx-2 text-secondary" title="عدم نمایش"></i> </a>         
                     @else
-                        <a href="" class="text-decoration-none"> <i class="ti-eye s-1-5x mx-1 text-warning" title="نمایش"></i> </a>    
+                        <a href="" class="text-decoration-none"> <i class="fa fa-eye s-1-5x mx-2 text-warning" title="نمایش"></i> </a>    
                     @endif
                 </div>
             </div>
@@ -63,12 +65,9 @@
                 <span class="lead"> مدیریت فوتر</span>
             </div>
             <div class="card-footer text-left">
-            <a href="{{url('footers/1/edit')}}" class="text-decoration-none"> <i class="ti-pencil s-1-5x mx-1 text-success" title="ویرایش"></i> </a>
-                @if ( true )
-                    <a href="" class="text-decoration-none"> <i class="ti-na s-1-5x mx-1 text-warning" title="عدم نمایش"></i> </a>         
-                @else
-                    <a href="" class="text-decoration-none"> <i class="ti-eye s-1-5x mx-1 text-warning" title="نمایش"></i> </a>    
-                @endif
+            <a href="{{url('footers/1/edit')}}" class="text-decoration-none"> 
+                <i class="ti-pencil s-1-5x mx-1 text-success" title=" ویرایش محتویات "></i>
+            </a>
             </div>
         </div>
 

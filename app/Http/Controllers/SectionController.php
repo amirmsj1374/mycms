@@ -17,15 +17,14 @@ class SectionController extends Controller
     {
         $section_types = ["features", "tabs", "prices", "cards", "faq", "clients", "posts"];
         $count = Section::count();
-        return view("sections.create", compact('section_types' , 'count'));
+        $section = new Section;
+        return view("sections.create_or_edit", compact('section_types' , 'count' , 'section'));
     }
 
+    // post request to sections
     public function store(Request $request)
     {
-        $data = $request->validate([
-            "type" => "required",
-            "position" => "required"
-        ]);
+        $data = self::validation();
 
         Section::create($data);
 
@@ -40,16 +39,28 @@ class SectionController extends Controller
 
     public function edit(Section $section)
     {
-        dd('edit '.$section->id);
+        $section_types = ["features", "tabs", "prices", "cards", "faq", "clients", "posts"];
+        return view("sections.create_or_edit", compact('section_types' , 'section'));
     }
 
+    //put request sections/{id}
     public function update(Request $request, Section $section)
     {
-        //
+        $data = self::validation();
+        $section->update($data);
+        return redirect("home")->withMessage(" بخش مورد نظر با موفقیت ویرایش شد. ");
     }
 
     public function destroy(Section $section)
     {
         //
+    }
+
+    public static function validation()
+    {
+        return request()->validate([
+            "type" => "required",
+            "position" => "required"
+        ]);
     }
 }

@@ -2,9 +2,12 @@
 
 @section('content')
 
-<form action="{{url("sections")}}" method="post">
+<form action="{{url("sections/$section->id")}}" method="post">
 
     @csrf
+    @if ($section->id)
+        {{method_field("PUT")}}
+    @endif
 
     <div class="row">
 
@@ -14,7 +17,9 @@
                 <select class="form-control" name="type" id="type" required>
                     <option value=""> -- انتخاب کنید -- </option>
                   @foreach ($section_types as $section_type)
-                      <option value="{{$section_type}}"> {{ translate_section_types($section_type) }} </option>
+                      <option value="{{$section_type}}" @if( $section_type == $section->type ) selected  @endif>
+                        {{ translate_section_types($section_type) }}
+                      </option>
                   @endforeach
                 </select>
           
@@ -22,7 +27,7 @@
 
         <div class="form-group col-md-3 my-2 ml-auto">
           <label for="position"> ترتیب </label>
-          <input type="number" class="position form-control" name="position" id="position" value="{{$count+1}}" required>
+          <input type="number" class="position form-control" name="position" id="position" value="{{ $section->id ? $section->position : $count+1 }}" required>
         </div>
 
     </div>
