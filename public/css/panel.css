@@ -29,3 +29,13 @@ body {
 .custom-checkbox label:before , .custom-checkbox label:after {
     right: 0;
 }
+
+/* are you sure box */
+#are_you_sure {
+    position: fixed;
+    left: 25px;
+    bottom: 25px; 
+    z-index: 1;
+    padding: 25px 100px;
+    display: none;
+}

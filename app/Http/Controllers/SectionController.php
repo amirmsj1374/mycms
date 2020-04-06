@@ -53,7 +53,15 @@ class SectionController extends Controller
 
     public function destroy(Section $section)
     {
-        //
+        $section->delete();
+        return back()->withMessage(" بخش مورد نظر حذف شد. ");
+    }
+    
+    public function visiblity(Section $section)
+    {
+        $section->visible = !$section->visible;
+        $section->save();
+        return back()->withMessage(" تغییرات مورد نظر اعمال شد. ");
     }
 
     public static function validation()

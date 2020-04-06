@@ -41,19 +41,23 @@
                     <span class="lead"> {{ translate_section_types($section->type) }} </span>
                 </div>
                 <div class="card-footer text-left">
-                        <a href="{{url("sections/$section->id/edit")}}" class="text-decoration-none"> 
-                            <i class="ti-pencil s-1-5x mx-2 text-success" title=" ویرایش محتویات "></i> 
+                        <a href="{{url("sections/$section->id/edit")}}" class="text-decoration-none mx-2"> 
+                            <i class="fa fa-pencil s-1-5x text-success" title=" ویرایش "></i> 
                         </a>
-                        <a href="{{url("sections/$section->id/edit")}}" class="text-decoration-none"> 
-                            <i class="fa fa-edit s-1-5x mx-2 text-primary" title="ویرایش"></i> 
+                        <a href="#" class="text-decoration-none mx-2"> 
+                            <i class="fa fa-edit s-1-5x text-primary" title=" ویرایش محتویات "></i> 
                         </a>
-                        <a href="#" class="text-decoration-none">
-                            <i class="fa fa-trash s-1-5x mx-2 text-danger" title=" پاک کردن "></i> 
+                        <a href="javascript:void" class="text-decoration-none mx-2 text-danger danger-alert" data-target="section-{{$section->id}}">
+                            <i class="fa fa-trash s-1-5x" title=" پاک کردن "></i> 
                         </a>
+                        <form class="d-none" action="{{url("sections/$section->id")}}" method="post" id="section-{{$section->id}}">
+                            @csrf
+                            {{ method_field("DELETE") }}
+                        </form>
                     @if ( $section->visible )
-                        <a href="" class="text-decoration-none"> <i class="fa fa-eye-slash s-1-5x mx-2 text-secondary" title="عدم نمایش"></i> </a>         
+                    <a href="{{url("sections/visiblity/$section->id")}}" class="text-decoration-none mx-2"> <i class="fa fa-eye-slash s-1-5x text-secondary" title="عدم نمایش"></i> </a>         
                     @else
-                        <a href="" class="text-decoration-none"> <i class="fa fa-eye s-1-5x mx-2 text-warning" title="نمایش"></i> </a>    
+                        <a href="{{url("sections/visiblity/$section->id")}}" class="text-decoration-none mx-2"> <i class="fa fa-eye s-1-5x text-warning" title="نمایش"></i> </a>    
                     @endif
                 </div>
             </div>
