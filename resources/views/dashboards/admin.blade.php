@@ -45,7 +45,7 @@
                             <i class="fa fa-pencil s-1-5x text-success" title=" ویرایش "></i> 
                         </a>
                         <a href="#" class="text-decoration-none mx-2"> 
-                            <i class="fa fa-edit s-1-5x text-primary" title=" ویرایش محتویات "></i> 
+                            <i class="fa fa-edit s-1-5x text-primary" title=" ویرایش محتوا "></i> 
                         </a>
                         <a href="javascript:void" class="text-decoration-none mx-2 text-danger danger-alert" data-target="section-{{$section->id}}">
                             <i class="fa fa-trash s-1-5x" title=" پاک کردن "></i> 
