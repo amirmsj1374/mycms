@@ -30,6 +30,14 @@ body {
     right: 0;
 }
 
+.add-row {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 15px 50px;
+}
+
 /* are you sure box */
 #are_you_sure {
     position: fixed;
