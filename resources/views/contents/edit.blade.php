@@ -12,7 +12,7 @@
 
                 <div class="form-group col-md-3 my-2">
                     <label for="position"> ترتیب </label>
-                    <input type="number" class="form-control" name="position[]" id="position" value="">
+                    <input type="number" class="form-control" name="position[]" id="position" value="" required>
                 </div>
     
                 @foreach ($section->inputs() as $input)
