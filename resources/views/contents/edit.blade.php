@@ -8,20 +8,23 @@
         {{method_field("PUT")}}
 
         <div id="clone-box">
-            <div class="row clone-row">
+            @foreach ($contents as $content)
 
-                <div class="form-group col-md-3 my-2">
-                    <label for="position"> ترتیب </label>
-                    <input type="number" class="form-control" name="position[]" id="position" value="" required>
+                <div class="row clone-row">
+
+                    <div class="form-group col-md-3 my-2">
+                        <label for="position"> ترتیب </label>
+                    <input type="number" class="form-control" name="position[]" id="position" value="{{$content->position}}" required>
+                    </div>
+        
+                    @foreach ($section->inputs() as $input)
+                        @include("contents.partials.$input")
+                    @endforeach
+                    
+                    <hr class="col-md-11 my-4">
+                    
                 </div>
-    
-                @foreach ($section->inputs() as $input)
-                    @include("contents.partials.$input")
-                @endforeach
-                
-                <hr class="col-md-11 my-4">
-                
-            </div>
+            @endforeach
         </div>
 
         <div class="row add-row bg-secondary">
