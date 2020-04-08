@@ -12,7 +12,13 @@
 
                 <div class="row clone-row">
 
-                    <div class="form-group col-md-3 my-2">
+                    <div class="col-md-1 my-2">
+                        <a class="btn btn-link text-decoration-none mt-4 mr-2 delete-clone-row" style="@if(count($contents)==1) display:none @endif" title=" حذف ">
+                            <i class="fa fa-trash fa-2x text-danger"></i>
+                        </a>
+                    </div>
+
+                    <div class="form-group col-md-2 my-2">
                         <label for="position"> ترتیب </label>
                     <input type="number" class="form-control" name="position[]" id="position" value="{{$content->position}}" required>
                     </div>

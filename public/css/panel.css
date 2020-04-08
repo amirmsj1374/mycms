@@ -17,6 +17,10 @@ body {
     text-decoration: none;
 }
 
+.hidden {
+    display: none;
+}
+
 
 /* modify default bootstrap */
 
