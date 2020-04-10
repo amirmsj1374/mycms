@@ -12,7 +12,6 @@ class HelperController extends Controller
 {
 
     public static function upload($new_file, $prev_file=null) {
-
         if ( $prev_file && file_exists($prev_file)) {
             File::delete($prev_file);
         }
