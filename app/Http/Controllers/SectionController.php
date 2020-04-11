@@ -68,7 +68,9 @@ class SectionController extends Controller
     {
         return request()->validate([
             "type" => "required",
-            "position" => "required"
+            "position" => "required",
+            "title" => "nullable",
+            "description" => "nullable",
         ]);
     }
 }

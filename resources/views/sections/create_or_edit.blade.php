@@ -25,9 +25,19 @@
           
         </div>
 
+        <div class="form-group col-md-3 my-2">
+            <label for="position"> ترتیب </label>
+            <input type="number" class="position form-control" name="position" id="position" value="{{ $section->id ? $section->position : $count+1 }}" required>
+        </div>
+
         <div class="form-group col-md-3 my-2 ml-auto">
-          <label for="position"> ترتیب </label>
-          <input type="number" class="position form-control" name="position" id="position" value="{{ $section->id ? $section->position : $count+1 }}" required>
+            <label for="title"> عنوان </label>
+            <input type="text" class="title form-control" name="title" id="title" value="{{$section->title}}">
+        </div>
+
+        <div class="form-group col-md-12 my-2">
+          <label for="description"> توضیحات </label>
+          <textarea class="form-control" name="description" id="description" rows="3">{{$section->description}}</textarea>
         </div>
 
     </div>
