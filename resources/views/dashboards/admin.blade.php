@@ -16,7 +16,7 @@
                 <span class="lead"> مدیریت منو </span>
             </div>
             <div class="card-footer text-left">
-            <a href="" class="text-decoration-none"> 
+            <a href="{{url("menu")}}" class="text-decoration-none"> 
                 <i class="ti-pencil s-1-5x mx-1 text-success" title=" ویرایش محتویات "></i> 
             </a>
             </div>

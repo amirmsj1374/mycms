@@ -12,11 +12,7 @@
 
                 <div class="row clone-row">
 
-                    <div class="col-md-1 my-2">
-                        <a class="btn btn-link text-decoration-none mt-4 mr-2 delete-clone-row" style="@if(count($contents)==1) display:none @endif" title=" حذف ">
-                            <i class="fa fa-trash fa-2x text-danger"></i>
-                        </a>
-                    </div>
+                    @include('fragments.clone_trash' , ['row_counts' => count($contents)])
 
                     <div class="form-group col-md-2 my-2">
                         <label for="position"> ترتیب </label>
@@ -33,15 +29,8 @@
             @endforeach
         </div>
 
-        <div class="row add-row bg-secondary">
-            <div class="col-md-2 my-2 mr-auto">
-                <a class="btn btn-success btn-block text-light" id="cloner"> <i class="fa fa-plus ml-1"></i> مورد جدید </a>
-            </div>
+        @include('fragments.cloner')
 
-            <div class="col-md-2 my-2 ml-auto">
-                <button class="btn btn-primary btn-block" type="submit"> <i class="fa fa-check ml-1"></i> تایید </button>
-            </div>
-        </div>
     </form>
     
     @endsection
