@@ -300,6 +300,10 @@ input:-webkit-autofill:focus {
     border-top: 3px solid transparent;
     text-align: center;
 }
+.mainmenu-area #primary-menu > ul > li > a > i {
+    margin-left: 5px;
+    font-size: 1.2em;
+}
 
 .mainmenu-area #primary-menu > ul > li > a:before {
     content: "";

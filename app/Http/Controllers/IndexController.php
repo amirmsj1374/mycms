@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Footer;
 use App\Header;
+use App\MenuItem;
 use App\Message;
 use App\Section;
 use Illuminate\Http\Request;
@@ -14,7 +15,8 @@ class IndexController extends Controller
         $header = Header::first() ?? new Header;
         $footer = Footer::first() ?? new Footer;
         $sections = Section::where('visible' , 1)->orderBy('position')->get();
-        return view('index', compact('header', 'footer' , 'sections'));
+        $menu_items = MenuItem::orderBy('position')->get();
+        return view('index', compact('header', 'footer' , 'sections', 'menu_items'));
     } 
 
     public function store_message(Request $request)
