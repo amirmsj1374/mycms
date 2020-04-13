@@ -26,6 +26,8 @@ class HeaderController extends Controller
     {
 
         $data = $request->validate([
+            "brand" => "nullable",
+            "brand_picture" => "nullable|mimes:png,jpg,jpeg,bmp,tiff",
             "title" => "nullable",
             "btn-name" => "nullable",
             "btn-link" => "nullable",
@@ -35,11 +37,11 @@ class HeaderController extends Controller
             "bg_path" => "nullable|mimes:png,jpg,jpeg,bmp,tiff|max:2000",
         ]);
 
-        if ($photo = $request->bg_path) {
+            
 
-            $data['bg_path'] = HelperController::upload($photo, $header->bg_path);
+        $data['bg_path'] = $request->bg_path ? HelperController::upload($request->bg_path, $header->bg_path) : null;
+        $data['brand_picture']  = $request->brand_picture ? HelperController::upload($request->brand_picture, $header->brand_picture) : null;
 
-        }
 
         if ($sliders = $request->slider) {
             

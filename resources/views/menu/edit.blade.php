@@ -15,7 +15,7 @@
                 
                 <div class="form-group col-md-1 my-2">
                     <label for="position"> ترتیب </label>
-                <input type="number" class="form-control" name="position[]" id="position" value="{{$item->position}}" required>
+                    <input type="number" class="form-control" name="position[]" id="position" value="{{$item->position}}" required>
                 </div>
 
                 <div class="form-group col-md-2 my-2">

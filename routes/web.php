@@ -15,6 +15,7 @@ Route::get('contents/{section}', 'ContentController@edit');
 Route::put('contents/{section}', 'ContentController@update');
 Route::get('menu', 'MenuController@edit');
 Route::put('menu', 'MenuController@update');
+Route::post('ajax/{method}', 'AjaxController@main');
 
 // resources routes
 Route::resource('headers', 'HeaderController')->only(['edit', 'update']);

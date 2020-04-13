@@ -55,7 +55,7 @@
                             {{ method_field("DELETE") }}
                         </form>
                     @if ( $section->visible )
-                    <a href="{{url("sections/visiblity/$section->id")}}" class="text-decoration-none mx-2"> <i class="fa fa-eye-slash s-1-5x text-secondary" title="عدم نمایش"></i> </a>         
+                        <a href="{{url("sections/visiblity/$section->id")}}" class="text-decoration-none mx-2"> <i class="fa fa-eye-slash s-1-5x text-secondary" title="عدم نمایش"></i> </a>         
                     @else
                         <a href="{{url("sections/visiblity/$section->id")}}" class="text-decoration-none mx-2"> <i class="fa fa-eye s-1-5x text-warning" title="نمایش"></i> </a>    
                     @endif

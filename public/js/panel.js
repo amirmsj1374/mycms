@@ -5,12 +5,11 @@ $(document).ready(function () {
     $('a.delete-photo').click(function () {
 
         var id = $(this).attr('data-photo-id');
-        var input = '<input type="text" name="photo_ids[]" value='+id+'>';
+        var input = '<input type="hidden" name="photo_ids[]" value='+id+'>';
         $('#photos-to-be-deleted').append(input);
         $(this).parents('.col-md-3').remove();
 
     });
-
 
     //are you sure
     $('.danger-alert').click(function (e) {
@@ -51,3 +50,36 @@ $(document).on('click' , '.delete-clone-row' , function () {
        $('.delete-clone-row').hide();
        }
 });
+
+function deleteBrandPicture(id) {
+    var formData = {
+        myId : id
+    }
+    $('.delete-brand').remove();
+    sendAjax('delete_brand', formData, null);
+}
+
+// ajax function
+function sendAjax(method,formData,target){
+
+    var token = $('input[name="_token"]').val();
+    formData._token = token;
+
+    var url = documentRoot+'/ajax/'+method;
+
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
+        }
+    })
+    $.ajax({
+        type: 'POST',
+        url: url,
+        data: formData,
+        success: function(data) {
+            if(target && data){
+                target.html(data);
+            }
+        }
+    });
+}

@@ -11,6 +11,33 @@
 
             <h3 class="col-12 dinar text-info mb-4"> ویرایش هدر </h3>
 
+                <div class="form-group col-md-3 my-2">
+                    <label for="brand"> نام برند </label>
+                    <input type="text" class="form-control" name="brand" id="brand" value="{{$header->brand}}">
+                </div>
+                
+                <div class="form-group col-md-3 my-2">
+                    <label for="brand_picture"> تصویر برند </label>
+                    <input type="file" class="form-control" name="brand_picture" id="brand_picture">
+                </div>
+
+                @if ($header->brand_picture)
+                    <div class="col-md-2 my-2 mr-4 delete-brand">
+                        <div class="card">
+                            <div class="card-body">
+                                <img src="{{asset($header->brand_picture)}}" class="img-fluid">
+                            </div>
+                            <div class="card-footer text-center">
+                                <a href="javascript:void" class="text-decoration-none" onclick="deleteBrandPicture({{$header->id}})"> 
+                                    <i class="ti-trash text-danger s-1-5x"></i> 
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                @endif
+                
+                <hr class="col-12">
+
             <div class="col-md-3 my-2">
                 <label for="title"> عنوان هدر </label>
                 <input type="text" class="title form-control" name="title" id="title" value="{{$header->title}}">

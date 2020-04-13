@@ -7,8 +7,12 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a href="#" class="navbar-brand logo">
-                <h2>colid</h2>
+            <a class="navbar-brand logo">
+                    @if ($header->brand_picture)
+                        <img src="{{asset($header->brand_picture)}}" alt="{{$header->brand}}" style="width:70px;">
+                    @else
+                            <h2> {{$header->brand}} </h2>
+                    @endif
             </a>
         </div>
         <!--Logo/-->
