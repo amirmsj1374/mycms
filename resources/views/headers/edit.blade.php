@@ -44,13 +44,13 @@
             </div>
             
             <div class="col-md-3 my-2">
-                <label for="btn-name"> نام دکمه </label>
-                <input type="text" class="btn-name form-control" name="btn_name" id="btn-name" value="{{$header->btn_name}}">
+                <label for="btn_name"> نام دکمه </label>
+                <input type="text" class="btn_name form-control" name="btn_name" id="btn_name" value="{{$header->btn_name}}">
             </div>
             
             <div class="col-md-3 my-2">
-                <label for="btn-link"> لینک دکمه </label>
-                <input type="text" class="btn-link form-control" name="btn_link" id="btn-link" value="{{$header->btn_link}}">
+                <label for="btn_link"> لینک دکمه </label>
+                <input type="text" class="btn_link form-control" name="btn_link" id="btn_link" value="{{$header->btn_link}}">
             </div>
 
             <div class="col-md-3 my-2">

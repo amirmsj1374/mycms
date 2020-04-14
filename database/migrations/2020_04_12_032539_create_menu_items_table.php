@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Support\Facades\DB;
 
 class CreateMenuItemsTable extends Migration
 {
@@ -21,6 +22,12 @@ class CreateMenuItemsTable extends Migration
             $table->string('link')->nullable();
             $table->timestamps();
         });
+
+        DB::table('menu_items')->insert([
+            'name' => 'اطلاعات',
+            'icon' => 'info-circle',
+            'link' => 'https://colorlib.com',
+        ]);
     }
 
     /**

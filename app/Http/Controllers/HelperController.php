@@ -12,9 +12,8 @@ class HelperController extends Controller
 {
 
     public static function upload($new_file, $prev_file=null) {
-        if ( $prev_file && file_exists($prev_file)) {
-            File::delete($prev_file);
-        }
+        
+        HelperController::delete_file($prev_file);
         
         $file_name = HelperController::rs() . '.' . $new_file->getClientOriginalExtension();
         $relative_path = "storage\app\public" ;
@@ -33,4 +32,10 @@ class HelperController extends Controller
         return $randomString;
     }
 
+    public static function delete_file ($file) {
+        if ( $file && file_exists($file)) {
+            File::delete($file);
+        }
+    }
 }
+

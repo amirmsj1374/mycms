@@ -21,7 +21,7 @@
                                         </div>
                                         @if ($content->link_name)
                                             <div class="caption-button" data-animation="animated fadeInUp">
-                                                <a href="{{url($content->link_href)}}" class="button">{{$content->link_name}}</a>
+                                                <a href="@if($content->link_href) {{url($content->link_href)}} @endif" class="button">{{$content->link_name}}</a>
                                             </div>
                                         @endif
                                     </div>

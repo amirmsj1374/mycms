@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Content;
 use App\Section;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 
 class SectionController extends Controller
 {
@@ -54,6 +56,17 @@ class SectionController extends Controller
 
     public function destroy(Section $section)
     {
+        $data = $section->contents()->get();
+        $count = count($data); 
+        $uploadables = Section::uploadable_contents();
+        
+        for ($i=0; $i < $count; $i++) { 
+            foreach ($uploadables as $uploadable) {
+               $prev_file = isset($data[$i]) ? $data[$i]->$uploadable : null ;
+               HelperController::delete_file($prev_file);
+            }
+        }
+        $section->contents()->delete();
         $section->delete();
         return back()->withMessage(" بخش مورد نظر حذف شد. ");
     }
